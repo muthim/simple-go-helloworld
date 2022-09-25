@@ -70,6 +70,20 @@ func helloworld(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	
+	// Determine port for HTTP service.
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "80"
+		log.Printf("defaulting to port %s", port)
+	}
+
+	// Start HTTP server.
+	log.Printf("listening on port %s", port)
+	if err := http.ListenAndServe(":"+port, nil); err != nil {
+		log.Fatal(err)
+	}
+	
 	http.HandleFunc("/", helloworld)
 	http.ListenAndServe(":80", nil)
 }
