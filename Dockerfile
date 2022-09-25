@@ -1,4 +1,4 @@
-FROM golang:1.12.0-alphine3.9
+FROM scratch
 MAINTAINER Aleix Penella (aleix.penella [at] gmail.com)
 
 #creating new directory for app
