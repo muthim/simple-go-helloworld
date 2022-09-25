@@ -1,4 +1,4 @@
-FROM golang:1.17-buster as builder
+FROM golang:1.17-buster
 MAINTAINER Aleix Penella (aleix.penella [at] gmail.com)
 
 #creating new directory for app
